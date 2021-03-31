@@ -16,7 +16,7 @@ export default class Footer extends React.Component {
 
 const FooterDiv = styled.div`
 position: absolute;
-width: 1366px;
+width: 100%;
 height: 221px;
 left: 0px;
 top: 1404px;
@@ -77,10 +77,10 @@ const Links = styled.p`
 position: absolute;
 width: 304px;
 height: 187px;
-left: 1062px;
+left: 1041px;
 top: 0px;
 
-font-family: 'Poppins', sans-serif;
+font-family: Poppins;
 font-style: normal;
 font-weight: bold;
 font-size: 25px;
