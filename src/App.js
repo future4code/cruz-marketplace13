@@ -2,6 +2,8 @@ import React from 'react'
 import { PaginaComprador } from './components/PaginaComprador'
 import { PaginaVendedor} from './components/PaginaVendedor'
 import { PaginaInicial } from './components/PaginaInicial'
+import Header from './components/header'
+import Footer from './components/footer'
 
 export default class App extends React.Component {
 
@@ -28,7 +30,9 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<div>
+				<Header />
 				{this.renderizarPagina()}
+				<Footer />
 			</div>
 		)
 	}
