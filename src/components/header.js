@@ -8,11 +8,11 @@ export default class Header extends React.Component {
         <HeaderDiv>
           <Logo src={logo} alt="some text" height="40px" ></Logo>
             <div>
-                <Home  >Home</Home>
-                <Barra1>|</Barra1>
-                <Vendedor>vendedor</Vendedor>
-                <Barra2>|</Barra2>
-                <Comprador>comprar</Comprador>
+                <Home onClick={() => this.props.mudarPagina('inicial')}>Home</Home>
+                    <Barra1>|</Barra1>
+                <Vendedor onClick={() => this.props.mudarPagina('vendedor')}>vendedor</Vendedor>
+                    <Barra2>|</Barra2>
+                <Comprador onClick={() => this.props.mudarPagina('comprador')}>comprar</Comprador>
             </div>
          </HeaderDiv>
         );
