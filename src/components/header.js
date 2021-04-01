@@ -8,11 +8,11 @@ export default class Header extends React.Component {
         <HeaderDiv>
           <Logo src={logo} alt="some text" height="40px" ></Logo>
             <div>
-                <Home  >Home</Home>
+                <Home className={HomeBotão} >Home</Home>
                 <Barra1>|</Barra1>
-                <Vendedor>vendedor</Vendedor>
+                <Vendedor className={VendedorBotão} >vendedor</Vendedor>
                 <Barra2>|</Barra2>
-                <Comprador>comprar</Comprador>
+                <Comprador className={ComprarBotão} >comprar</Comprador>
             </div>
          </HeaderDiv>
         );
