@@ -1,68 +1,93 @@
-import React from 'react'
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
+import Carro from "./image.png";
 
 export class PaginaInicial extends React.Component {
   render() {
-      
     return (
-      <ConteinerBotao>
-        <ButtonVendedor onClick={() => this.props.mudarPagina('vendedor')}>Vendedor</ButtonVendedor>
-        <ButtonComprador onClick={() => this.props.mudarPagina('comprador')}>Comprador</ButtonComprador>
-      </ConteinerBotao>
-    )
+      <MainContainer>
+        <SubContainer>
+          <h1>FutureCar</h1>
+          <h2>
+            Compre ou venda seu carro pelo <span>melhor preço</span> do mercado
+          </h2>
+          <ButtonSell
+            onClick={() => {
+              this.props.mudarPagina("vendedor");
+            }}
+          >
+            Quero Vender
+          </ButtonSell>
+          <ButtonBuy
+            onClick={() => {
+              this.props.mudarPagina("comprador");
+            }}
+          >
+            Quero Comprar
+          </ButtonBuy>
+        </SubContainer>
+        <Image src={Carro} />
+      </MainContainer>
+    );
   }
 }
 
-const ConteinerBotao = styled.div`
-position: absolute;
-width: 822px;
-height: 203px;
-left: 272px;
-top: 92px;
+const Image = styled.img`
+  width: 500px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+`;
 
-background: #495AF6;
+const ButtonBuy = styled.button`
+  margin: 10px;
+  height: 50px;
+  width: 110px;
+  background-color: #a8b2ff;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-family: "Poppins";
+  font-size: 15px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+  transition: 500ms;
+  cursor: pointer;
+  &:hover {
+    box-shadow: none;
+    color: white;
+  }
+`;
 
-`
+const ButtonSell = styled.button`
+  margin: 10px;
+  height: 50px;
+  width: 110px;
+  background-color: #a8a6a6;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-family: "Poppins";
+  font-size: 15px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+  transition: 500ms;
+  cursor: pointer;
+  &:hover {
+    box-shadow: none;
+    color: white;
+  }
+`;
 
-const ButtonVendedor = styled.button`
-position: absolute;
-width: 207px;
-height: 89px;
-left: calc(50% - 207px/2 - 218.5px);
-top: 25%;
-
-background: #B7BEFA;
-border-radius: 26px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 25px;
-line-height: 37px;
-text-align: center;
-
-color: #000000;
-
-
-`
-
-const ButtonComprador = styled.button`
-position: absolute;
-width: 207px;
-height: 89px;
-left: 525px;
-top: 25%;
-
-background: #B7BEFA;
-border-radius: 26px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 25px;
-line-height: 37px;
-text-align: center;
-
-color: #000000;
-
-`
+const MainContainer = styled.div`
+  padding: 0px 100px;
+  font-family: "Poppins";
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+`;
+const SubContainer = styled.div`
+  font-family: "Poppins";
+  margin-top: 100px;
+  width: 400px;
+  span {
+    color: #a8b2ff;
+  }
+`;

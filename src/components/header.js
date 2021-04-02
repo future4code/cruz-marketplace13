@@ -1,128 +1,50 @@
-import React from 'react'
-import styled from "styled-components"
-import logo from "./logo.png"
+import React from "react";
+import styled from "styled-components";
+import logo from "./logo2.png";
 
 export default class Header extends React.Component {
-    render() {
-        return (
-        <HeaderDiv>
-          <Logo src={logo} alt="some text" height="40px" ></Logo>
-            <div>
-                <Home onClick={() => this.props.mudarPagina('inicial')}>Home</Home>
-                    <Barra1>|</Barra1>
-                <Vendedor onClick={() => this.props.mudarPagina('vendedor')}>vendedor</Vendedor>
-                    <Barra2>|</Barra2>
-                <Comprador onClick={() => this.props.mudarPagina('comprador')}>comprar</Comprador>
-            </div>
-         </HeaderDiv>
-        );
-    }
+  render() {
+    return (
+      <MainContainer>
+        <Logo src={logo} alt="logo"></Logo>
+        <div>
+          <Button onClick={() => this.props.mudarPagina("inicial")}>
+            Home
+          </Button>
+          <Button onClick={() => this.props.mudarPagina("vendedor")}>
+            Vendedor
+          </Button>
+          <Button onClick={() => this.props.mudarPagina("comprador")}>
+            Comprador
+          </Button>
+        </div>
+      </MainContainer>
+    );
+  }
 }
 
-const HeaderDiv = styled.header`
-background-color: rgba(73, 90, 246, 1);
-height: 50px;
-`
+const Button = styled.button`
+  margin: 10px;
+  height: 50px;
+  width: 110px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-family: "Poppins";
+  font-size: 15px;
+  cursor: pointer;
+  &:hover {
+    color: #495af6;
+  }
+`;
+const MainContainer = styled.header`
+  background-color: #a8b2ff;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+`;
 const Logo = styled.img`
-padding: 5px;
-`
-
-const Menu = styled.div`
-position: absolute;
-width: 356px;
-height: 36px;
-left: 212px;
-top: 7px;
-
-font-family: 'Poppins', sans-serif;
-font-style: normal;
-font-weight: bold;
-font-size: 25px;
-line-height: 37px;
-
-color: #FFFFFF;
-`
-
-const Barra1 = styled.span`
-position: absolute;
-width: 7px;
-height: 36px;
-left: 311px;
-top: 7px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 25px;
-line-height: 37px;
-text-align: right;
-
-color: #FFFFFF;
-
-`
-
-const Barra2 = styled.span`
-position: absolute;
-width: 7px;
-height: 36px;
-left: 453px;
-top: 7px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 25px;
-line-height: 37px;
-text-align: right;
-
-color: #FFFFFF;
-`
-
-const Home = styled.span`
-position: absolute;
-width: 76px;
-height: 36px;
-left: 230px;
-top: 7px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 25px;
-line-height: 37px;
-text-align: center;
-
-color: #FFFFFF;
-`
-
-const Vendedor = styled.span`
-position: absolute;
-width: 125px;
-height: 36px;
-left: 323px;
-top: 7px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 25px;
-line-height: 37px;
-
-color: #FFFFFF;
-`
-
-const Comprador = styled.span`
-position: absolute;
-width: 147px;
-height: 36px;
-left: 465px;
-top: 7px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 25px;
-line-height: 37px;
-
-color: #FFFFFF;
-`
+  height: 60px;
+`;
