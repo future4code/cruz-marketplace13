@@ -2,13 +2,16 @@ import React from "react";
 import axios from "axios";
 import styled from "styled-components";
 
+const MainContainer = styled.div`
+  display: flex;
+`;
 const Filtros = styled.div`
   background: #495af6;
   padding: 10px;
   display: flex;
   flex-direction: column;
   width: 250px;
-  margin: 15px 30px;
+  margin: 15px 95px;
   font-family: "Poppins", sans-serif;
   border-radius: 20px;
 
@@ -17,7 +20,7 @@ const Filtros = styled.div`
   }
   select {
     height: 40px;
-    border-radius: 20px;
+    border-radius: 15px;
     outline: none;
     border: none;
     margin: 10px;
@@ -29,7 +32,7 @@ const Filtros = styled.div`
     outline: none;
     border: none;
     margin: 10px;
-    border-radius: 20px;
+    border-radius: 15px;
     font-family: "Poppins", sans-serif;
   }
 `;
@@ -128,51 +131,113 @@ export class PaginaComprador extends React.Component {
     }
 
     return (
-      <div>
-        <Filtros>
-          <label>Filtrar por: </label>
-          <select onChange={this.ordenarPor}>
-            <option>Nome</option>
-            <option>Preço</option>
-            <option>Prazo De Entrega</option>
-          </select>
+      <MainContainer>
+        <div>
+          <Filtros>
+            <label>Filtrar por: </label>
+            <select onChange={this.ordenarPor}>
+              <option>Nome</option>
+              <option>Preço</option>
+              <option>Prazo De Entrega</option>
+            </select>
 
-          <label>Ordem: </label>
-          <select disabled={this.state.desabilitar} onChange={this.ordem}>
-            <option>Crescente</option>
-            <option>Decrescente</option>
-          </select>
-        </Filtros>
-        <Filtros>
-          <label>Pesquisar por:</label>
-          <input onChange={this.inputMinimo} placeholder="Valor Mínimo" />
-          <input onChange={this.inputMaximo} placeholder="Valor Máximo" />
-          <input onChange={this.inputNome} placeholder="Buscar Por Nome" />
-        </Filtros>
-
-        <section>
+            <label>Ordem: </label>
+            <select disabled={this.state.desabilitar} onChange={this.ordem}>
+              <option>Crescente</option>
+              <option>Decrescente</option>
+            </select>
+          </Filtros>
+          <Filtros>
+            <label>Pesquisar por:</label>
+            <input onChange={this.inputMinimo} placeholder="Valor Mínimo" />
+            <input onChange={this.inputMaximo} placeholder="Valor Máximo" />
+            <input onChange={this.inputNome} placeholder="Buscar Por Nome" />
+          </Filtros>
+        </div>
+        <Section>
           {listaFiltrada.map((carro) => {
             return (
-              <div key={carro.id}>
-                <h3>Nome: {carro.name}</h3>
-                <p>
-                  <b>Descrição:</b> {carro.description}
-                </p>
-                <p>
-                  <b>Preço:</b> R${carro.price}
-                </p>
-                <p>
-                  <b>Método de Pagamento:</b> {carro.paymentMethod}
-                </p>
-                <p>
-                  <b>Prazo de Entrega:</b> {carro.shipping} dias
-                </p>
-                <hr />
-              </div>
+              <CardCarro key={carro.id}>
+                <img src="https://picsum.photos/400/401" alt="carro" />
+
+                <Name>
+                  <span>{carro.name}</span>
+                </Name>
+
+                <Description>
+                  <span>{carro.description}</span>
+                </Description>
+
+                <Price>
+                  <span>R$ {carro.price}</span>
+                </Price>
+
+                <div>
+                  <Shipping>
+                    <span>Entrega: {carro.shipping} dias</span>
+                  </Shipping>
+
+                  <PaymentMethod>
+                    <span>{carro.paymentMethod}</span>
+                  </PaymentMethod>
+                </div>
+              </CardCarro>
             );
           })}
-        </section>
-      </div>
+        </Section>
+      </MainContainer>
     );
   }
 }
+const Section = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 13px;
+`;
+
+const CardCarro = styled.div`
+  width: 400px;
+  border: 2px solid #e7e7e7;
+  border-radius: 4px;
+  padding: 0.5rem;
+  background-color: #495af6;
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 100%;
+    height: 370px;
+    object-fit: fill;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 13px;
+  }
+  > div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    span {
+      margin: 0 1rem;
+    }
+  }
+  span {
+    background: white;
+    padding: 0.7rem 0.9rem;
+    border-radius: 15px;
+  }
+`;
+
+const Name = styled.p``;
+
+const Description = styled.p``;
+
+const Price = styled.p``;
+
+const PaymentMethod = styled.p``;
+
+const Shipping = styled.p``;

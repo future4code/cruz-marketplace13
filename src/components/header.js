@@ -32,8 +32,11 @@ const Button = styled.button`
   outline: none;
   font-family: "Poppins";
   font-size: 15px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+  transition: 500ms;
   cursor: pointer;
   &:hover {
+    box-shadow: none;
     color: #495af6;
   }
 `;
@@ -43,8 +46,10 @@ const MainContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 100px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); 
 `;
 const Logo = styled.img`
   height: 60px;
+
 `;
