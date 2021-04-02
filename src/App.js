@@ -29,13 +29,11 @@ export default class App extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<Header
-				mudarPagina={this.mudarPagina}
-				/>
+			<App>
+				<Header />
 				{this.renderizarPagina()}
 				<Footer />
-			</div>
+			</App>
 		)
 	}
 }

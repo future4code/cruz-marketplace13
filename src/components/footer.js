@@ -15,8 +15,9 @@ export default class Footer extends React.Component {
 }
 
 const FooterDiv = styled.div`
-position: absolute;
-width: 100%;
+position:absolute;
+bottom:0;
+width:100%;
 height: 221px;
 left: 0px;
 top: 1404px;
