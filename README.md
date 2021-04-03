@@ -1,9 +1,9 @@
 ### FutureCar 3
 
-Link da API: https://documenter.getpostman.com/view/9133542/TzCJfVAW
-
-Não esqueçam de editar o readme com: 
-- Integrantes do grupo
-- O que funciona
-- O que não funciona
-- **LINK DO SURGE**
+Integrantes:
+  Frank de Castro Filho
+  Janis Costadelli
+  Rafael Orlando
+  Silvio Viana
+  
+Surge: http://cruz-marketplace13.surge.sh/
