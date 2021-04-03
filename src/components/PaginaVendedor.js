@@ -210,6 +210,7 @@ export class PaginaVendedor extends React.Component {
               placeholder="Preço"
               value={this.state.price}
               onChange={this.inputPreco}
+              type = "number"
             />
             <input
               placeholder="Meio de Pagamento"
@@ -220,6 +221,7 @@ export class PaginaVendedor extends React.Component {
               placeholder="Prazo de Entrega"
               value={this.state.shipping}
               onChange={this.inputPrazo}
+              type = "number"
             />
             <input
               placeholder="Link"
