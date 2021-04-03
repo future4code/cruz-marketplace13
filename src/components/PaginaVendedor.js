@@ -64,12 +64,6 @@ const FormButton = styled.button`
   }
 `;
 
-const Image = styled.img`
-  width: 500px;
-  margin-top: 100px;
-  margin-bottom: 100px;
-`;
-
 const CardCarro = styled.div`
   margin: 13px;
   width: 400px;
