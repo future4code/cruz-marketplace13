@@ -2,13 +2,13 @@
 
 ### Integrantes:
 
- Frank de Castro Filho
+  Frank de Castro Filho
  
- Janis Costadelli
+  Janis Costadelli
  
- Rafael Orlando
+  Rafael Orlando
  
- Silvio Viana
+  Silvio Viana
   
 ### Surge: 
 http://cruz-marketplace13.surge.sh/
