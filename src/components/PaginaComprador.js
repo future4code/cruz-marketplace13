@@ -145,7 +145,7 @@ export class PaginaComprador extends React.Component {
             <label>Pesquisar por:</label>
             <input onChange={this.inputMinimo} placeholder="Valor Mínimo" />
             <input onChange={this.inputMaximo} placeholder="Valor Máximo" />
-            <input onChange={this.inputNome} placeholder="Buscar Por Nome" />
+            <input onChange={this.inputNome} placeholder="Nome" />
           </Filtros>
         </div>
         <Section>
