@@ -128,7 +128,7 @@ export class PaginaComprador extends React.Component {
       <MainContainer>
         <div>
           <Filtros>
-            <label>Filtrar por: </label>
+            <label>Ordenar por: </label>
             <select onChange={this.ordenarPor}>
               <option>Nome</option>
               <option>Preço</option>
