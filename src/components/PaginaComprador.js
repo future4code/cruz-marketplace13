@@ -45,7 +45,6 @@ export class PaginaComprador extends React.Component {
     inputNome: "",
     ordernarPor: "nome",
     ordem: "crescente",
-    desabilitar: true
   };
 
   componentDidMount() {
@@ -76,11 +75,6 @@ export class PaginaComprador extends React.Component {
   };
 
   ordenarPor = (event) => {
-    if (event.target.value === "Nome") {
-      this.setState({ desabilitar: true });
-    } else {
-      this.setState({ desabilitar: false });
-    }
     this.setState({ ordernarPor: event.target.value.toLowerCase() });
   };
 
@@ -134,7 +128,7 @@ export class PaginaComprador extends React.Component {
       <MainContainer>
         <div>
           <Filtros>
-            <label>Filtrar por: </label>
+            <label>Ordenar por: </label>
             <select onChange={this.ordenarPor}>
               <option>Nome</option>
               <option>Preço</option>
@@ -142,7 +136,7 @@ export class PaginaComprador extends React.Component {
             </select>
 
             <label>Ordem: </label>
-            <select disabled={this.state.desabilitar} onChange={this.ordem}>
+            <select onChange={this.ordem}>
               <option>Crescente</option>
               <option>Decrescente</option>
             </select>
@@ -158,7 +152,7 @@ export class PaginaComprador extends React.Component {
           {listaFiltrada.map((carro) => {
             return (
               <CardCarro key={carro.id}>
-                <img src="https://picsum.photos/400/401" alt="carro" />
+                <img src={carro.link} alt="carro" />
 
                 <Name>
                   <span>{carro.name}</span>

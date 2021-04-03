@@ -64,12 +64,6 @@ const FormButton = styled.button`
   }
 `;
 
-const Image = styled.img`
-  width: 500px;
-  margin-top: 100px;
-  margin-bottom: 100px;
-`;
-
 const CardCarro = styled.div`
   margin: 13px;
   width: 400px;
@@ -210,6 +204,7 @@ export class PaginaVendedor extends React.Component {
               placeholder="Preço"
               value={this.state.price}
               onChange={this.inputPreco}
+              type = "number"
             />
             <input
               placeholder="Meio de Pagamento"
@@ -220,6 +215,7 @@ export class PaginaVendedor extends React.Component {
               placeholder="Prazo de Entrega"
               value={this.state.shipping}
               onChange={this.inputPrazo}
+              type = "number"
             />
             <input
               placeholder="Link"
